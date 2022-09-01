@@ -7,6 +7,10 @@
     <title>My Website</title>
 </head>
 <body>
-    <p>Hello viewers</p>
+    <input type="text" name="name"/>
+    <p></p>
 </body>
+<script>
+  document.getElementsByTagName("p")[0].innerText = 'Hello ' + document.getElementsByTagName('input')[0].value;
+</script>
 </html>
