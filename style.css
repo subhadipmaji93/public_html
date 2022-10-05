@@ -1,3 +1,10 @@
 p {
  color: #2b2b2b;
 }
+.myButton{
+    background-color: rgb(31, 124, 231);
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    color: #ffff;
+}
