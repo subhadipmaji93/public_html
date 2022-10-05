@@ -9,9 +9,13 @@
 </head>
 <body>
     <input type="text" name="name"/>
+    <button onclick="showText()">Click Me!!</button>
     <p></p>
 </body>
 <script>
-  document.getElementsByTagName("p")[0].innerText = 'Hello ' + document.getElementsByTagName('input')[0].value + '!!';
+  function showText(){
+    document.getElementsByTagName("p")[0].innerText = 'Hello ' + document.getElementsByTagName('input')[0].value + '!!';
+  }
+
 </script>
 </html>
