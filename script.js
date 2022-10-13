@@ -12,4 +12,18 @@ myButton.addEventListener("click", function(){
     let showMessage = document.getElementsByTagName("p")[0];
     showMessage.innerText = 'Hello ' + value  + '!! 🧡🧡';
     showMessage.style.display = "block";
+    fadeOut(showMessage);
+}
+
+function fadeOut(elm){
+  let i = 10;
+  let ref = setInterval(function(){
+    if(i>=0){
+      elm.style.opacity = i/10;
+      i--;
+    } else {
+      clearInterval(ref);
+      return;
+    }
+  }, 200);
 }
