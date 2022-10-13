@@ -9,5 +9,7 @@ myButton.addEventListener("click", function(){
     alert('nothing to show!!');
   });
   function showText(value){
-    document.getElementsByTagName("p")[0].innerText = 'Hello ' + value  + '!! 🖤🖤';
+    let showMessage = document.getElementsByTagName("p")[0];
+    showMessage.innerText = 'Hello ' + value  + '!! 🧡🧡';
+    showMessage.style.display = "block";
 }
