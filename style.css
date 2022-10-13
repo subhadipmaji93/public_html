@@ -1,5 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+
 p {
- color: #2b2b2b;
+ display: none;
+ color: #ffff;
+ background-color: rgb(115, 223, 27);
+ border-radius: 5px;
+ padding: 10px;
+ font-size: 20px;
 }
 .myButton{
     background-color: rgb(31, 124, 231);
@@ -7,4 +21,9 @@ p {
     border: none;
     padding: 10px;
     color: #ffff;
+}
+
+input {
+    border-radius: 5px;
+    height: 30px;
 }
