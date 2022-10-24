@@ -8,13 +8,16 @@ myButton.addEventListener("click", function(){
     } 
     alert('nothing to show!!');
   });
+
+
   function showText(value){
     let showMessage = document.getElementsByTagName("p")[0];
     showMessage.innerText = 'Hello ' + value  + '!! 🧡🧡';
     showMessage.style.display = "block";
-    fadeOut(showMessage);
+    const animation = new fadeInAnimation(showMessage);
+    animation.start(1000);
 }
-
+/*
 function fadeOut(elm){
   let i = 10;
   let ref = setInterval(function(){
@@ -26,4 +29,44 @@ function fadeOut(elm){
       return;
     }
   }, 200);
+}
+*/
+function fadeInAnimation(node){
+  this.node = node;
+
+  this.start = function(duration){
+    this.duration = duration;
+    if(this.duration === 0){
+      // Jump to end immediately
+      this.onProgress(1);
+    } else {
+      this.onProgress(0);
+       // Start animating
+      this.startTime = performance.now();
+      this.frameId = requestAnimationFrame(()=>this.onFrame());
+    }
+  }
+
+  this.onFrame = function(){
+    const timePassed = performance.now() - this.startTime;
+    const progress = Math.min(timePassed / this.duration, 1);
+    this.onProgress(progress);
+    if(progress < 1){
+      // We will have more frames to paint
+      this.frameId = requestAnimationFrame(()=>this.onFrame());
+    } else {
+      this.stop();
+    }
+  }
+
+  this.onProgress = function(progress){
+    this.node.style.opacity = progress;
+  }
+
+  this.stop = function(){
+    cancelAnimationFrame(this.frameId);
+    this.startTime = null;
+    this.frameId = null;
+    this.duration = 0;
+  }
 }
