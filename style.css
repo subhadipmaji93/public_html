@@ -16,7 +16,7 @@ p {
  font-size: 20px;
 }
 
-.myButton{
+button{
     background-color: rgb(31, 124, 231);
     border-radius: 5px;
     border: none;
@@ -24,11 +24,15 @@ p {
     color: #ffff;
 }
 
-.myButton:hover{
+button:hover{
     background-color: rgb(87, 158, 240);;
 }
 
 input {
     border-radius: 5px;
     height: 30px;
+}
+
+.clr {
+    float: right;
 }
